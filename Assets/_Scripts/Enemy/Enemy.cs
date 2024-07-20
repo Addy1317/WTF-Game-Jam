@@ -27,35 +27,38 @@ namespace TreeMahgeddon.Enemy
         private IEnumerator WaitAndStartMovement(float fallDelay)
         {
             yield return new WaitForSeconds(fallDelay);
-
-            // Once the fall delay is over, start moving
             isFalling = false;
-            //rb.isKinematic = false;
-            StartMovement();
+            rb.isKinematic = false;
+        }
+
+        private void Update()
+        {
+            if (!isFalling && target != null)
+            {
+                MoveTowardsTarget();
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("Collision with: " + collision.gameObject.name);
-
             if (isFalling && collision.gameObject.CompareTag("Ground"))
             {
                 isFalling = false;
                 rb.velocity = Vector2.zero;
-                rb.isKinematic = true;
-                StartMovement();
+                rb.gravityScale = 0;
+                FreezeYPosition();
             }
         }
 
-        private void StartMovement()
+        private void MoveTowardsTarget()
         {
-            if (target != null)
-            {
-                rb.isKinematic = false;
-                Vector2 direction = ((Vector2)target.position - rb.position).normalized;
-                rb.velocity = direction * speed;
-                Debug.Log("Moving towards: " + target.position + " with velocity: " + rb.velocity);
-            }
+            Vector2 direction = ((Vector2)target.position - rb.position).normalized;
+            rb.velocity = direction * speed;
+        }
+
+        private void FreezeYPosition()
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
     }
 }

@@ -14,7 +14,6 @@ namespace TreeMahgeddon.Enemy
 
         private void Start()
         {
-            // Start the spawning process
             StartCoroutine(SpawnEnemies());
         }
 
@@ -32,13 +31,10 @@ namespace TreeMahgeddon.Enemy
             int index = Random.Range(0, enemyPrefabs.Length);
             GameObject enemyPrefab = enemyPrefabs[index];
 
-            // Use the fixed spawn point for the spawn position
             Vector2 spawnPosition = spawnPoint.position;
 
-            // Instantiate the enemy at the spawn position
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
-            // Set up the enemy to start moving towards the tower after a delay
             Enemy enemyComponent = enemy.GetComponent<Enemy>();
             if (enemyComponent != null)
             {
