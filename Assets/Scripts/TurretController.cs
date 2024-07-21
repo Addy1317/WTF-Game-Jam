@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-    [SerializeField] private BulletController bulletController;
+    [SerializeField] private BulletController bullet;
     [SerializeField] private Transform firePosition;
+    [SerializeField] private float shootDelay;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float timeStamp;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Time.time >timeStamp)
+        {
+            FireBullet();
+            timeStamp = Time.time + shootDelay;
+        }
+    }
+
+    private void FireBullet()
+    {
+        if(bullet == null)
+        {
+            return;
+        }
+
+        BulletController newBullet = Instantiate(bullet, firePosition.position, firePosition.rotation);
+        newBullet.transform.Rotate(0, 0, 90);
+        AudioManager.Instance.PlaySFX(AudioName.BulletSound);
     }
 }

@@ -124,7 +124,7 @@ MonoBehaviour:
   maxNegativeRotation: -45
   bullet: {fileID: -6289289375524099090, guid: 7d5eb8c1ec58b294984dd6504fe4c4c3, type: 3}
   firePoint: {fileID: 2730987478850238864}
-  shootDelay: 1
+  shootDelay: 0.5
 --- !u!1 &7141014194298661127
 GameObject:
   m_ObjectHideFlags: 0
