@@ -43,3 +43,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Clouds
+    uniqueID: 824054857
+    locked: 0
+  - name: BG1
+    uniqueID: 4065309443
+    locked: 0
+  - name: Fense
+    uniqueID: 474969529
+    locked: 0
+  - name: TreeHouse
+    uniqueID: 3884060851
+    locked: 0
+  - name: Platform
+    uniqueID: 109109417
+    locked: 0
