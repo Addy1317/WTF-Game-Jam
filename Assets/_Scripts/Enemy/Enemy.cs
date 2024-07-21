@@ -8,6 +8,9 @@ namespace TreeMahgeddon.Enemy
     {
         [SerializeField] private float speed = 5f;
         [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private GameObject bulletPrefab; 
+        [SerializeField] private Transform firePoint;
+        [SerializeField] private float shootingInterval = 1f;
 
         private Transform target;
         private bool hasLanded = false;
@@ -47,6 +50,8 @@ namespace TreeMahgeddon.Enemy
                 rb.velocity = Vector2.zero;
                 rb.gravityScale = 0;
                 FreezeYPosition();
+                StartCoroutine(ShootBullets());
+
             }
         }
 
@@ -60,5 +65,22 @@ namespace TreeMahgeddon.Enemy
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
-    }
+
+        private IEnumerator ShootBullets()
+        {
+            while (true)
+            {
+                if (bulletPrefab != null && firePoint != null)
+                {
+                    Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                }
+                else
+                {
+                    Debug.LogError("Bullet prefab or fire point not assigned.");
+                }
+
+                yield return new WaitForSeconds(shootingInterval);
+            }
+        }
+    }   
 }
