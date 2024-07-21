@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 109109417
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1363686277, guid: b785a8d1c3329a948b56e89d1c8c5f66, type: 3}
+  m_Sprite: {fileID: -1860400076, guid: b785a8d1c3329a948b56e89d1c8c5f66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693871418236891823}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce05fcbab0d28d64d8e0897f23726dfe, type: 3}
   m_Name: 
@@ -124,7 +124,8 @@ MonoBehaviour:
   maxNegativeRotation: -45
   bullet: {fileID: -6289289375524099090, guid: 7d5eb8c1ec58b294984dd6504fe4c4c3, type: 3}
   firePoint: {fileID: 2730987478850238864}
-  shootDelay: 0.5
+  shootDelay: 0.6
+  animator: {fileID: 2647673569643256101}
 --- !u!1 &7141014194298661127
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 7141014194298661127}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.893, y: 0, z: 0}
+  m_LocalPosition: {x: 1.44, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6368291852832129468}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.51, y: 0.33, z: 0}
+  m_LocalPosition: {x: 1.329, y: 0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6175701937693979377
 Transform:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 109109417
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -1170504022, guid: 5bc17207724bdc5469d719804a0051f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,4 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: -6289289375524099090, guid: 7d5eb8c1ec58b294984dd6504fe4c4c3, type: 3}
   firePosition: {fileID: 4891790056444823220}
-  shootDelay: 0.5
+  shootDelay: 1

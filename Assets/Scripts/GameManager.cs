@@ -11,12 +11,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(PlayerIntro(delay));
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     private IEnumerator PlayerIntro(int seconds)
     {
         yield return new WaitForSeconds(seconds);

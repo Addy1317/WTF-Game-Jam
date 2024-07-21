@@ -10,6 +10,11 @@ public class TurretController : MonoBehaviour
 
     private float timeStamp;
 
+    private void Start()
+    {
+        StartCoroutine(DisableTurret(10));
+    }
+
     void Update()
     {
         if(Time.time >timeStamp)
@@ -29,5 +34,11 @@ public class TurretController : MonoBehaviour
         BulletController newBullet = Instantiate(bullet, firePosition.position, firePosition.rotation);
         newBullet.transform.Rotate(0, 0, 90);
         AudioManager.Instance.PlaySFX(AudioName.BulletSound);
+    }
+
+    private IEnumerator DisableTurret(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        this.gameObject.SetActive(false);
     }
 }

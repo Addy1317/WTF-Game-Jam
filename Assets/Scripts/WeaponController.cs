@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private BulletController bullet;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float shootDelay;
+    [SerializeField] private Animator animator;
 
     private float timeStamp;
 
@@ -45,9 +46,15 @@ public class WeaponController : MonoBehaviour
             return;
         }
 
+        animator.SetTrigger("IsShooting");
         // Instantiate the bullet and set its rotation
         BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
         newBullet.transform.Rotate(0, 0, 90); // Adjust this rotation as needed
         AudioManager.Instance.PlaySFX(AudioName.BulletSound);
+    }
+
+    private void IsGunBuilt()
+    {
+        animator.SetBool("Idle", true);
     }
 }
