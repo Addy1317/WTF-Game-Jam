@@ -48,6 +48,6 @@ public class WeaponController : MonoBehaviour
         // Instantiate the bullet and set its rotation
         BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
         newBullet.transform.Rotate(0, 0, 90); // Adjust this rotation as needed
-        Debug.Log("BulletFired");
+        AudioManager.Instance.PlaySFX(AudioName.BulletSound);
     }
 }
