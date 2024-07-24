@@ -153,4 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: -6289289375524099090, guid: 7d5eb8c1ec58b294984dd6504fe4c4c3, type: 3}
   firePosition: {fileID: 4891790056444823220}
-  shootDelay: 1
+  shootDelay: 0.5

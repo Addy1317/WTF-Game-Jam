@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretController : MonoBehaviour
@@ -10,14 +9,15 @@ public class TurretController : MonoBehaviour
 
     private float timeStamp;
 
-    private void Start()
+    private void OnEnable()
     {
-        StartCoroutine(DisableTurret(10));
+        timeStamp = Time.time + shootDelay; // Ensure firing starts after enabling
+        StartCoroutine(DisableTurret(10)); // Start the coroutine to disable the turret
     }
 
-    void Update()
+    private void Update()
     {
-        if(Time.time >timeStamp)
+        if (Time.time > timeStamp)
         {
             FireBullet();
             timeStamp = Time.time + shootDelay;
@@ -26,7 +26,7 @@ public class TurretController : MonoBehaviour
 
     private void FireBullet()
     {
-        if(bullet == null)
+        if (bullet == null)
         {
             return;
         }
@@ -40,5 +40,6 @@ public class TurretController : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         this.gameObject.SetActive(false);
+        TowerController.Instance.OnTurretDisabled(); // Notify TowerController when the turret is disabled
     }
 }

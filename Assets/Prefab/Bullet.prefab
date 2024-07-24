@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 35
-  updatePoints: 10
+  updatePoints: 16.6
   damage: 1
 --- !u!50 &-7296679631710108818
 Rigidbody2D:
